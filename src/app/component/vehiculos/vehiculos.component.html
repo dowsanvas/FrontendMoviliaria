@@ -1,0 +1,27 @@
+<div class="login-records-container ">
+    <h2>Registros de Vehículos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Anio</th>
+                <th>Tipo</th>
+                <th>Chasis</th>
+                <th>Placa</th>
+                <th>Kilometraje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let veh of vehiculos">
+                <td>{{ veh.marca }}</td>
+                <td>{{ veh.modelo }}</td>
+                <td>{{ veh.anio }}</td>
+                <td>{{ veh.tipo }}</td>
+                <td>{{ veh.chasis }}</td>
+                <td>{{ veh.placa }}</td>
+                <td>{{ veh.kilometraje }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

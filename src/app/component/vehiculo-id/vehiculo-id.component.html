@@ -1,0 +1,49 @@
+<div class="login-records-container ">
+    <h2>Registros de Vehículos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Anio</th>
+                <th>Tipo</th>
+                <th>Chasis</th>
+                <th>Placa</th>
+                <th>Kilometraje</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vehi of vehiculos">
+                <td>{{ vehi.id }}</td>
+                <td>{{ vehi.marca }}</td>
+                <td>{{ vehi.modelo }}</td>
+                <td>{{ vehi.anio }}</td>
+                <td>{{ vehi.tipo }}</td>
+                <td>{{ vehi.chasis }}</td>
+                <td>{{ vehi.placa }}</td>
+                <td>{{ vehi.kilometraje }}</td>
+                <td>
+                    <button (click)="obtenerID(vehi.id, vehi.link)">+</button>
+                    <button (click)="mostrarVentanaEmergente(vehi.id)">Editar</button>
+                    <button (click)="eliminar(vehi.id)">Eliminar</button>
+                    <div id="ventanaEmergente" class="ventana-emergente">
+                        <h3>Editar Registro</h3>
+                        <label>ID: <input type="text" [(ngModel)]="usuario_id" readonly ></label>
+                        <label>Marca: <input type="text" [(ngModel)]="marca"></label>
+                        <label>Modelo: <input type="text" [(ngModel)]="modelo"></label>
+                        <label>Año: <input type="text" [(ngModel)]="anio"></label>
+                        <label>Tipo: <input type="text" [(ngModel)]="tipo"></label>
+                        <label>Chasis: <input type="text" [(ngModel)]="chasis"></label>
+                        <label>Placa: <input type="text" [(ngModel)]="placa"></label>
+                        <label>Kilometraje: <input type="text" [(ngModel)]="kilometraje"></label>
+                        <label>Link: <input type="text" [(ngModel)]="link"></label>
+                        <button (click)="guardar(vehi.id)">Guardar Cambios</button>
+                        <button (click)="cerrarVentanaEmergente()">Cancelar</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

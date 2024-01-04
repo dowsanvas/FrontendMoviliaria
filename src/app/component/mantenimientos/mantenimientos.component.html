@@ -1,0 +1,29 @@
+<div class="login-records-container ">
+    <h2>Registros de Mantenimientos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Vehiculo ID</th>
+                <th>Detalles</th>
+                <th>Tipo</th>
+                <th>Kilometraje</th>
+                <th>Alertas</th>
+                <th>Fecha</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mant of mantenimiento">
+                <td>{{ mant.vehiculo_id }}</td>
+                <td>{{ mant.detalles }}</td>
+                <td>{{ mant.tipo }}</td>
+                <td>{{ mant.kilometraje }}</td>
+                <td>{{ mant.alertas }}</td>
+                <td>{{ mant.fecha }}</td>
+                <td>
+                    <button (click)="obtenerId(mant.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

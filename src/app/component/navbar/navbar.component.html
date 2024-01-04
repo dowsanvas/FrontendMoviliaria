@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="home" routerLinkActive="home"><img src="assets\img\logoPNG.png" style="width: 250px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="QuienesSomos" routerLinkActive="QuienesSomos">Quiénes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="nuestrosservicios" routerLinkActive="nuestrosservicios">Nuestros Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="contactanos" routerLinkActive="contactanos">Contactanos</a>
+                </li>
+                <!-- <li *ngIf="bandera" class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="mantenimiento"
+                        routerLinkActive="mantenimiento">Mantenimiento</a>
+                </li> -->
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Registrar
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li *ngIf="bandera"><a class="dropdown-item" routerLink="Usuario"
+                                routerLinkActive="Usuario">Usuario</a></li>
+                        <li><a *ngIf="bandera" class="dropdown-item" routerLink="Vehiculo"
+                                routerLinkActive="Vehiculo">Vehículo</a></li>
+                        <li><a class="dropdown-item" routerLink="Cooperativa"
+                                routerLinkActive="Cooperativa">Empresa-Cooperativa</a></li>
+                    </ul>
+                </li> -->
+
+            </ul>
+        </div>
+        <div class="navbar-nav">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <ng-container *ngIf="bandera; else loginLink">
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAA0VJREFUWEfdmFuIjWEUhp8XJSERIuUYQqJmyFlCuURO4YKcBhEZF2JyQVMUohjjYlImQoqUEokIF87KuCCnHK+YJBdYWvpHe7b/39+3G2qy7nZ7ve/37vWv/13r26KZhZqZHv4PQWY2EpgHjAa6A12TSn8A3gLXgWOSbhX7BKIrZGatgKXAemBA5EF1wB6gRtL3GEyUIDObCewDesSQpuS8AsoknQvhg4LMrBzYCU3utx/AMkk1hUQVFGRmlcCm0K8q8vsNknZnYTIFmdlC4EiRh8Wmz5B0Oi05VZCZjQGuAN7I/yK+AKWSvOkbxR+CzKwlcB8YEqHEgIvAoyTXMVMicJ5yVdKEGEErgIMRpO+AOZKu5uaa2STgBNA5gmO6pDO5eY0qZGb++XVidiG+aZLOpyWZ2SzgZIgAuCOppJCgscC1CKKbktylM8PMHgBDI7j6SHrekJdfIX8d3YlDUSVpVUDQIfedEBFQLmlXliCvjlcpFNWSygKCqoHlISLglCR/xL8iv0JPgH4RJLckjQgIugcMi+C6Lak0S9BnoG0EiacUamqffacieT5K6pglqB5oH0n0Hpid8tq7Dx0FukTy1EvqkCXoMTAwksjT3BgvAO64bqiOnVoE3lPrJA3OEnQZmFgkYVPTL0manCXI14yNkSd4ddxEXwDfEozPvl7J3hRcbRJMpaTNWYJGATcCgrzP9gL7JXkf/RFm1g1YA6wF2gX4SiTdyRLkv8q3u6zN0H1qgaSXMVU0sz7JCGk0HnKwzyT1zeVKm/YrgQMpBz4Fhktya4gOM+sE3AV6poAWSzocEuRvy0NgUB6BT/B5krx3oiMZ2MfdIvJALtIfVyO+rAVtPOBvXIs8ktpkL/4ao8jM2viNI7ky5UIcPza3d1J7KBdhZj6rqlIOfgNUJDPoU0ZTu/POBbYC3uD5MV/SsTRsaMn3O9W6AtXweeW99SyZi97E/QNrR4Wk7VmcQa8wsy3AtphHFMjxXlktKa3qv6FBQZ5pZgsA35UarszF6nMrcTFnQ8AoQYmo1sCSxMl7h4iT733G7QBq/+pVOv9wMxsHLHJfSqZ6w2Rv+LPB3f7oP/2zIbIiTU6LfmRNPimSoNkJ+gl6BQQ0XRlIbgAAAABJRU5ErkJggg==" />
+                        {{ nombre }}</button>
+                    <div class="dropdown-content">
+                        <a (click)="perfil()">Perfil</a>
+                        <a (click)="cerrarSesion()">Cerrar Sesión</a>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-template #loginLink>
+                <a class="nav-link" routerLink="/login" routerLinkActive="active">Iniciar sesión</a>
+            </ng-template>
+        </div>
+    </div>
+</nav>

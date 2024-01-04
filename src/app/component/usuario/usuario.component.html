@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="usuario.component.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="registration-form">
+            <h2>Registro de Usuarios</h2>
+            <div class="form-group">
+                <label for="nombrecompleto">Nombres Completos</label>
+                <input type="text" id="nombrecompleto" name="nombrecompleto" required [(ngModel)]="nombrecompleto" pattern="[A-Za-z]+" maxlength="25">
+                <span class="error-message" *ngIf="hasInvalidCharacters()" [ngClass]="'error-text'">Por favor, ingresa solo letras en este campo.</span>
+            </div>
+
+
+            <div class="form-group">
+                <label for="nombredeusuario">Nombre de Usuario</label>
+                <input type="text" id="nombredeusuario" name="nombredeusuario" required [(ngModel)]="nombredeusuario">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="text" id="email" name="email" required [(ngModel)]="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+                <span class="error-message" *ngIf="isInvalidEmail()" [ngClass]="'error-text'">El correo electrónico no es válido.</span>
+            </div>
+
+            <div class="form-group">
+                <label for="pass">Contraseña</label>
+                <input type="password" id="pass" name="pass" required [(ngModel)]="pass">
+            </div>
+            <button type="submit" (click)="guardar()">Registrarse</button>
+        </form>
+    </div>
+</body>
+
+</html>

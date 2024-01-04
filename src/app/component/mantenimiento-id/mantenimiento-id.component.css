@@ -1,0 +1,109 @@
+.login-records-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+td {
+    padding: 8px;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.icono-con-tooltip:hover .tooltip {
+    display: block;
+}
+
+.ventana-emergente1 {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.boton-imprimir {
+    background-image: url('https://image.flaticon.com/icons/png/512/58/58458.png');
+    background-size: cover;
+    width: 30px;
+    /* Ancho deseado del botón */
+    height: 30px;
+    /* Altura deseada del botón */
+    border: none;
+    /* Sin borde para que parezca solo la imagen */
+    cursor: pointer;
+}
+
+.ventana-emergente1 h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.ventana-emergente1 label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.ventana-emergente1 input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.ventana-emergente1 button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.ventana-emergente1 button:last-child {
+    background-color: #dc3545;
+}
+
+.ventana-emergente1 button[type="submit"] {
+    background-color: #28a745;
+}

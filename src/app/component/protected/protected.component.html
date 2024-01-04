@@ -1,0 +1,27 @@
+<div *ngIf="rol === 'Administrador'" class="container perfil-cliente">
+    <p class="nombre-completo">Administrador: {{ nombrecompleto }}</p>
+    <p class="email">Email: {{ email }}</p>
+    <div class="container" *ngIf="rol === 'Administrador'">
+        <app-usuarios></app-usuarios>
+    </div>
+    <div class="container" *ngIf="rol === 'Administrador'">
+        <app-vehiculos></app-vehiculos>
+    </div>
+    <div class="container" *ngIf="rol === 'Administrador'">
+        <app-mantenimientos></app-mantenimientos>
+    </div>
+    <div class="container" *ngIf="rol === 'Administrador'">
+        <app-contactos></app-contactos>
+    </div>
+</div>
+<div *ngIf="rol === 'Cliente'" class="container perfil-cliente">
+    <p class="nombre-completo">Cliente: {{ nombrecompleto }}</p>
+    <p class="email">Email: {{ email }}</p>
+    <button *ngIf="rol === 'Cliente'" class="btn btn-primary" (click)="agregarVehiculo()">Agregar Vehículo</button>
+    <div class="container" *ngIf="rol === 'Cliente'">
+        <app-vehiculo-id></app-vehiculo-id>
+    </div>
+    <div class="container" *ngIf="rol==='Cliente'">
+        <app-mantenimiento-id></app-mantenimiento-id>
+    </div>
+</div>

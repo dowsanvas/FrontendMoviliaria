@@ -1,0 +1,25 @@
+<div class="login-records-container ">
+    <h2>Solicitud de Contacto</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Mensaje</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contactos">
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.nombre }}</td>
+                <td>{{ contact.correo }}</td>
+                <td>{{ contact.mensaje }}</td>
+                <td>
+                    <button (click)="eliminarContacto(contact.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

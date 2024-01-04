@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="mantenimiento.component.css">
+</head>
+
+<body>
+    <div class="square">
+
+        <div class="container">
+            <h2>Agregar Mantenimiento</h2>
+            <form class="row g-3 mt-4">
+                <div class="col-6" style="max-width: 300px; max-height: 300px;">
+                    <button class="agregar" style="width: 100%; height: 100%;">
+                        <img src="{{link}}" style="width: 100%; height: 100%;" />
+                    </button>
+                </div>
+                <div class="col-6 ">
+                    <form class="row g-3 mt-4">
+                        <div class="col-7">
+                            <label for="detalles" class="form-label">Detalles</label>
+                            <select class="form-select" id="detalles" name="detalles" [(ngModel)]="detalles">
+                                <option value="">Selecciona una razón</option>
+                                <option value="Cambio de llantas">Cambio de llantas</option>
+                                <option value="Cambio de bujías">Cambio de bujías</option>
+                                <option value="Cambio de amortiguadores">Cambio de amortiguadores</option>
+                                <option value="Cambio de aceite">Cambio de aceite</option>
+                                <option value="Alineación y balanceo">Alineación y balanceo</option>
+                                <option value="Cambio de filtro de aire">Cambio de filtro de aire</option>
+                                <option value="Reemplazo de batería">Reemplazo de batería</option>
+                                <option value="Cambio de frenos">Cambio de frenos</option>
+                                <option value="Inspección general">Inspección general</option>
+                            </select>
+                        </div>
+                        <div class="col-7">
+                            <label for="tipo" class="form-label">Tipo</label>
+                            <select class="form-select" id="tipo" name="tipo" [(ngModel)]="tipo">
+                                <option value="">Selecciona un tipo</option>
+                                <option value="Preventivo">Preventivo</option>
+                                <option value="Correctivo">Correctivo</option>
+                            </select>
+                        </div>
+                        <div class="col-7">
+                            <label for="kilometraje" class="form-label">Kilometraje</label>
+                            <input type="text" class="form-control" id="kilometraje" name="kilometraje" [(ngModel)]="kilometraje" pattern="[0-9]+">
+                            <span class="error-message" *ngIf="!isValidKilometraje()">Por favor, ingresa solo números en este campo.</span>
+                        </div>
+                        
+                        <div class="col-7">
+                            <label for="alertas" class="form-label">Estado</label>
+                            <select class="form-select" id="alertas" name="alertas" [(ngModel)]="alertas">
+                                <option value="">Selecciona un estado</option>
+                                <option value="Realizado">Realizado</option>
+                                <option value="Por Realizar">Por Realizar</option>
+                            </select>
+                        </div>
+                        <div class="col-7">
+                            <label for="fecha" class="form-label">Fecha</label>
+                            <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)]="fecha" min="{{ getCurrentDate() | date:'yyyy-MM-dd' }}">
+                        </div>
+                        
+                        <div class="col-7 ">
+                            <label for="comentario" class="form-label">Comentario</label>
+                            <input type="text" class="form-control" id="comentario" name="comentario"
+                                [(ngModel)]="comentario">
+                        </div>
+                        <div class="col-7 ">
+                            <button type="submit" class="btn btn-primary" (click)="guardar()">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

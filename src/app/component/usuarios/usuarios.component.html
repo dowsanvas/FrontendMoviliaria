@@ -1,0 +1,28 @@
+<div class="login-records-container ">
+    <h2>Registros de Usuarios</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre Completo</th>
+                <th>Nombre De Usuario</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let users of usuarios">
+                <td>{{ users.nombrecompleto }}</td>
+                <td>{{ users.nombredeusuario }}</td>
+                <td>{{ users.email }}</td>
+                <td>{{ users.rol }}</td>
+                <td>{{users.estado}}</td>
+                <td>
+                    <button *ngIf="users.estado !== 'Activo'" (click)="habilitarUsuario(users.id)">Activar</button>
+                    <button *ngIf="users.estado ==='Activo'" (click)="bloquearUsuario(users.id)">Desactivar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

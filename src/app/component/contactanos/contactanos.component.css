@@ -1,0 +1,81 @@
+.contactanos {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo {
+    color: #2874A6;
+    font-size: 32px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2874A6;
+    padding-bottom: 10px;
+}
+
+.descripcion {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.informacion-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.icono {
+    width: 50px;
+    height: 50px;
+}
+
+.detalle {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.formulario-contacto {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: #2874A6;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #95a5a6;
+    border-radius: 4px;
+}
+
+.btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}

@@ -1,0 +1,30 @@
+.carousel {
+    margin-left: -11%;
+    width: 122%;
+    height: 80%;
+}
+
+.container_2 {
+    margin-left: -10%;
+    margin-top: -2%;
+    width: 122%;
+    height: 80%;
+    background-color: #6b8db39d;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    width: 50%;
+    height: 80%;
+    padding: 50px 0%;
+    margin-left: 30%;
+}
+
+.info_2 {
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 100px;
+    padding: 200px 0px;
+}

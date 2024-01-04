@@ -1,0 +1,22 @@
+.quienes-somos {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo {
+    color: #2874A6;
+    font-size: 32px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2874A6;
+    padding-bottom: 5px;
+}
+
+.logo {
+    width: 500px;
+    /* Ajusta el tamaño del logotipo a tu preferencia */
+    margin: 20px auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

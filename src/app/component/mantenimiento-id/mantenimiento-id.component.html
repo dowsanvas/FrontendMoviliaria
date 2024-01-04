@@ -1,0 +1,58 @@
+<div class="login-records-container">
+    <h2>Registros de Mantenimientos</h2>
+
+    <label for="filtroVehiculos">Filtrar por ID:</label>
+    <select id="filtroVehiculos" [(ngModel)]="filtroID" (change)="enviarMantenimiento(filtroID)">
+        <option *ngFor="let mante of mantenimiento1" [value]="mante.id">{{ mante.id }}</option>
+    </select>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Detalles</th>
+                <th>Tipo</th>
+                <th>Kilometraje</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+                <th>Comentario</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let mant of mantenimiento">
+                <td>{{ mant.id }}</td>
+                <td>{{ mant.detalles }}</td>
+                <td>{{ mant.tipo }}</td>
+                <td>{{ mant.kilometraje }}</td>
+                <td>{{ mant.alertas }}</td>
+                <td>{{ mant.fecha | slice:0:10 }}</td>
+                <td>{{mant.comentario}} </td>
+                <td>
+                    <button (click)="mostrarVentanaEmergente1(mant.id)">Editar</button>
+                    <div id="ventanaEmergente1" class="ventana-emergente1">
+                        <h3>Editar Registro</h3>
+                        <label>ID: <input type="text" [(ngModel)]="id" readonly ></label>
+                        <label>Detalles: <input type="text" [(ngModel)]="detalles"></label>
+                        <label>Tipo: <input type="text" [(ngModel)]="tipo"></label>
+                        <label>Kilometraje: <input type="text" [(ngModel)]="kilometraje"></label>
+                        <label>Fecha: <input type="text" [(ngModel)]="fecha"></label>
+                        <label>Comentario: <input type="text" [(ngModel)]="comentario"></label>
+                        <button (click)="guardar(mant.id)">Guardar Cambios</button>
+                        <button (click)="cerrarVentanaEmergente1()">Cancelar</button>
+                    </div>
+                    <button (click)="obtenerId(mant.id)">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKRJREFUSEvtlUEKgCAQRV93CYK6TsdpGXSZrlPQaYpAXVjDt8xd7mR03v8z6FQUXlXh/ChAD4xAYwjZgAGYLaEKsACtcLkC3VvA7i5aQlRclkglUPELwF/I7X1wHFsvDvDKpfXIonn+dfO+BsQK1T7wUx2ohNkl+gGXd/W0JH8P5NeUXSJFeAxIGTQx9HbwWC/5HJUTUCvpLm6OTjUyE/Pbx4oDDlBhOBmYaWrOAAAAAElFTkSuQmCC" />
+                    </button>
+                    <button *ngIf="mant.alertas === 'Por Realizar'" (click)="actualizarMantenimiento(mant.id)">
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAmJJREFUSEu11VvIT2kUBvDfJ8doytzIIae5oGZCiiunKzkkIYeEUkIOcSEXyCFcSVPjULhwLHEhMYiaCwyuJqdIDjNiCheKlEMmtL7WX3u2/7e/L/W9V3u/e63nWe96n/XsBq28GloZX3MEHTAN4zAYffEZj3ED53ACH5sqtIpgPHYnaNVBH2Ix/qgX1BTBRmzIhCc4hjO4mXtDMAkz0Cv3VmF7maQeQQ38DebgdLalXoFtMB370Qkr8FsxsEwQVZ3COwzDnRaKYDiuIAhH489aXpGgC+6jO+biSAvBa2Er8SvuYVDt4osES7ALd/FLRVtqgN0wO0Fjr32qKwqcgpOxWSQ4i1DOsiSqOkBPXMRPWIS9GbwVa7APC8sE/yISI+nvCvSIiX73QUh0JJ5n/AhcxnUMLRO8TSWEGt5nwmocxIt8D/BL6J/go/CsUMyPeIlX6FomCFnGRf+AeF6Knfgnq4x2hjqi8tgL8Dh1cUXu68yP5//dQdz+gFTA7Ryg6HNUG4Dtci/aF1IsgwdetOWvFMrPZYKjmIVoy7YsK6Y0ehoeFCs8KHpeDzy+r8NmHMa8MkFo/xAeYCA+FUiu4b9mwNviEXpjJo6XCeJyo00RMB8HCs3tlwRPK9S1PG0ihjUG7UOZIN7H4vx3WEXYytW0ijHZ1sZa6pndWmxJNYTZ/V5RdXhPtCMGqzPiFKG8r6spu16PTRkVCgq7jkm/lZYQVjI5nbRH2ko46Y5yMVU/nInYk9NdcYjGaV6Q1vFNXHO/zI6Yigl5cTFk8csMtYTeL6SphcLqruYIqipv0bdWJ/gC1BJ8GY8uoFoAAAAASUVORK5CYII=" />
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <button (click)="Imprimir()" style="margin-top: 20px;"> Imprimir
+        </button>
+    </table>
+</div>

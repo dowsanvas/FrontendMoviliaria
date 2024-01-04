@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="vehiculo.component.css">
+</head>
+
+<body>
+    <div class="square">
+        <div class="container">
+            <h2>Registro de Vehículos</h2>
+            <form class="row g-3 mt-4">
+                <div class="col-6">
+                    <label for="marca" class="form-label">Marca</label>
+                    <input type="text" class="form-control" id="marca" name="marca" [(ngModel)]="marca" pattern="[A-Za-z]+">
+                    <span class="error-message" *ngIf="!isValidMarca()">Por favor, ingresa solo letras en este campo.</span>
+                </div>
+                <div class="col-6">
+                    <label for="modelo" class="form-label">Modelo</label>
+                    <input type="text" class="form-control" id="modelo" name="modelo" [(ngModel)]="modelo" pattern="[A-Za-z0-9]+">
+                    <span class="error-message" *ngIf="!isValidModelo()">Por favor, ingresa solo letras y números en este campo.</span>
+                </div>
+                
+                <div class="col-6">
+                    <label for="anio" class="form-label">Año</label>
+                    <input type="text" class="form-control" id="anio" name="anio" [(ngModel)]="anio" pattern="[0-9]*" maxlength="4">
+                    <span class="error-message" *ngIf="!isValidAnio()">Por favor, ingresa un año válido (4 dígitos).</span>
+                </div>                         
+                <div class="col-6">
+                    <label for="tipo" class="form-label">Tipo</label>
+                    <input type="text" class="form-control" id="tipo" name="tipo" [(ngModel)]="tipo" pattern="[A-Za-z]+">
+                    <span class="error-message" *ngIf="!isValidTipo()">Por favor, ingresa solo letras en este campo.</span>
+                </div>                
+                <div class="col-6">
+                    <label for="chasis" class="form-label">Chasis</label>
+                    <input type="text" class="form-control" id="chasis" name="chasis" [(ngModel)]="chasis" pattern="[A-Za-z0-9]+">
+                    <span class="error-message" *ngIf="!isValidChasis()">Por favor, ingresa solo letras y números en este campo.</span>
+                </div>                
+                <div class="col-6">
+                    <label for="placa" class="form-label">Placa</label>
+                    <input type="text" class="form-control" id="placa" name="placa" [(ngModel)]="placa" pattern="[A-Za-z]{0,3}[0-9]{0,4}" maxlength="7">
+                    <span class="error-message" *ngIf="!isValidPlaca()">Por favor, ingresa una placa válida (3 letras y 4 números).</span>
+                </div>
+                <div class="col-6">
+                    <label for="kilometraje" class="form-label">Kilometraje</label>
+                    <input type="text" class="form-control" id="kilometraje" name="kilometraje" [(ngModel)]="kilometraje" pattern="[0-9]*">
+                    <span class="error-message" *ngIf="!isValidKilometraje()">Por favor, ingresa un valor válido (números solamente).</span>
+                </div>                
+                <div class="col-6 ">
+                    <label for="link" class="form-label">Link Imagen</label>
+                    <input type="text" class="form-control" id="link" name="link" [(ngModel)]="link">
+                </div>
+                <div class="col-12 ">
+                    <button type="submit" class="btn btn-primary" (click)="guardar()">Agregar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
